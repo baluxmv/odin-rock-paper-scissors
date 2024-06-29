@@ -1,5 +1,3 @@
-console.log("Hello World");
-
 function getComputerChoice(){
     // Randomly get the values: 0, 1 or 2
     let computerChoice = Math.floor(Math.random() * 3);
@@ -14,4 +12,23 @@ function getComputerChoice(){
     }
 }
 
-console.log(getComputerChoice());
+
+function getHumanChoice(){
+    let humanChoice = prompt("Rock, paper or scissors?");
+    return humanChoice;
+}
+
+
+function playRound(humanChoice, computerChoice){
+
+}
+
+
+let humanScore = 0;
+let computerScore = 0;
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+
+
