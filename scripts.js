@@ -13,19 +13,36 @@ function getComputerChoice(){
 }
 
 
-function getHumanChoice(){
-    let humanChoice = prompt("Rock, paper or scissors?");
-    return humanChoice.toLowerCase();
-}
+let choicesButtons = document.querySelector(".choice-buttons");
+
+choicesButtons.addEventListener("click", (event) => {
+    let target = event.target;
+    
+    switch(target.id) {
+        case "rock-button":
+            playRound("rock", getComputerChoice());
+            break;
+        case "paper":
+            playRound("paper", getComputerChoice());
+            break;
+        case "scissors":
+            playRound("scissors", getComputerChoice());
+            break;
+    }
+});
 
 
 
 function playGame() {
 
-   
     let humanScore = 0;
     let computerScore = 0;
     let winner;
+
+    const rockButton = document.querySelector(".rock-button");
+    const paperButton = document.querySelector(".paper-button");
+    const scissorsButton = document.querySelector(".scissors-button");
+
 
     if (humanScore > computerScore) {
         winner = "human";
