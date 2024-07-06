@@ -26,11 +26,6 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     let winner;
-    for (let i = 0; i < 5; i++){
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
 
     if (humanScore > computerScore) {
         winner = "human";
@@ -41,6 +36,7 @@ function playGame() {
     else {
         winner = "power of friendship";
     }
+    
     console.log(`The winner of this game was the ${winner}, which ended with 
 a score of ${humanScore} for the human and ${computerScore} for the computer.`)
 
