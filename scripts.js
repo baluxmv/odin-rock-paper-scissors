@@ -33,56 +33,46 @@ choicesButtons.addEventListener("click", (event) => {
 
 
 
-function playGame() {
 
-    let humanScore = 0;
-    let computerScore = 0;
-    let winner;
-
-    const rockButton = document.querySelector(".rock-button");
-    const paperButton = document.querySelector(".paper-button");
-    const scissorsButton = document.querySelector(".scissors-button");
+let humanScore = 0;
+let computerScore = 0;
+let winner;
 
 
-    if (humanScore > computerScore) {
-        winner = "human";
+function playRound(humanChoice, computerChoice){
+    if (humanChoice == "rock" && computerChoice == "paper"){
+        computerScore++;
     }
-    else if (computerScore > humanScore) {
-        winner = "computer";
+    else if (humanChoice == "rock" && computerChoice == "scissors"){
+        humanScore++;
     }
-    else {
-        winner = "power of friendship";
+    else if (humanChoice == "paper" && computerChoice == "rock") {
+        humanScore++;
     }
-    
-    console.log(`The winner of this game was the ${winner}, which ended with 
-a score of ${humanScore} for the human and ${computerScore} for the computer.`)
+    else if (humanChoice == "paper" && computerChoice == "scissors") {
+        computerScore++;
+    }
+    else if (humanChoice == "scissors" && computerChoice == "paper") {
+        humanScore++;
+    }
+    else if (humanChoice == "scissors" && computerChoice == "rock") {
+        computerChoice++;
+    }
+    console.log(`Human Choice: ${humanChoice} Computer Choice: ${computerChoice}`);
+    console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`);
+
+    if (humanScore == 5) {
+        console.log('The human is the winner!');
+        humanScore = 0
+        computerScore = 0;
+    }
+    else if (computerScore == 5) {
+        console.log('The computer is the winner!');
+        humanScore = 0;
+        computerScore = 0;
+    }
+}
 
 
-    function playRound(humanChoice, computerChoice){
-        if (humanChoice == "rock" && computerChoice == "paper"){
-            computerScore++;
-        }
-        else if (humanChoice == "rock" && computerChoice == "scissors"){
-            humanScore++;
-        }
-        else if (humanChoice == "paper" && computerChoice == "rock") {
-            humanScore++;
-        }
-        else if (humanChoice == "paper" && computerChoice == "scissors") {
-            computerScore++;
-        }
-        else if (humanChoice == "scissors" && computerChoice == "paper") {
-            humanScore++;
-        }
-        else if (humanChoice == "scissors" && computerChoice == "rock") {
-            computerChoice++;
-        }
-        console.log(`Human Choice: ${humanChoice} Computer Choice: ${computerChoice}`);
-        console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`);
-    }
-};
-
-// Start the game
-playGame();
 
 
