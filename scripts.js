@@ -80,10 +80,10 @@ choicesButtons.addEventListener("click", (event) => {
         case "rock-button":
             playRound("rock", getComputerChoice());
             break;
-        case "paper":
+        case "paper-button":
             playRound("paper", getComputerChoice());
             break;
-        case "scissors":
+        case "scissors-button":
             playRound("scissors", getComputerChoice());
             break;
     }
