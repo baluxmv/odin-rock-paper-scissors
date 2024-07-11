@@ -36,12 +36,22 @@ function playRound(humanChoice, computerChoice){
         humanScore++;
     }
     else if (humanChoice == "scissors" && computerChoice == "rock") {
-        computerChoice++;
+        computerScore++;
     }
 
     // Log choices and scores to the console
     console.log(`Human Choice: ${humanChoice} Computer Choice: ${computerChoice}`);
     console.log(`Human Score: ${humanScore} Computer Score: ${computerScore}`);
+
+    // Update player choice image dynamically
+    let playerChoiceImg = document.querySelector("#player-choice-img");
+    playerChoiceImg.src = `../images/${humanChoice}.png`;
+    playerChoiceImg.alt = `Player's choice: ${humanChoice}`;
+
+    // Update computer choice image dynamically
+    let computerChoiceImg = document.querySelector("#computer-choice-img");
+    computerChoiceImg.src = `../images/${computerChoice}.png`;
+    computerChoiceImg.alt = `Computer's choice: ${computerChoice}`;
     
     // Update the score display
     document.querySelector("#player-score-number").textContent = humanScore;

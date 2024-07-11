@@ -30,8 +30,15 @@ body{
 
 }
 
-.computer-score {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+
+.score img {
+    width: 150px;
+    height: auto;
+}
+
+.choice-buttons button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
 }
