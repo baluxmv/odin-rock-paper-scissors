@@ -47,12 +47,14 @@ function playRound(humanChoice, computerChoice){
     let playerChoiceImg = document.querySelector("#player-choice-img");
     playerChoiceImg.src = `../images/${humanChoice}.png`;
     playerChoiceImg.alt = `Player's choice: ${humanChoice}`;
+    playerChoiceImg.classList.remove("hidden");
 
     // Update computer choice image dynamically
     let computerChoiceImg = document.querySelector("#computer-choice-img");
     computerChoiceImg.src = `../images/${computerChoice}.png`;
     computerChoiceImg.alt = `Computer's choice: ${computerChoice}`;
-    
+    computerChoiceImg.classList.remove("hidden");
+
     // Update the score display
     document.querySelector("#player-score-number").textContent = humanScore;
     document.querySelector("#computer-score-number").textContent = computerScore;
@@ -61,11 +63,15 @@ function playRound(humanChoice, computerChoice){
     if (humanScore == 5) {
         console.log('The human is the winner!');
         alert("The human is the winner!");
+        playerChoiceImg.classList.add("hidden");
+        computerChoiceImg.classList.add("hidden");
         resetScores();
     }
     else if (computerScore == 5) {
         console.log('The computer is the winner!');
         alert("The computer is the winner!");
+        playerChoiceImg.classList.add("hidden");
+        computerChoiceImg.classList.add("hidden");
         resetScores();
     }
 }
