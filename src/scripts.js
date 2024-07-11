@@ -45,13 +45,13 @@ function playRound(humanChoice, computerChoice){
 
     // Update player choice image dynamically
     let playerChoiceImg = document.querySelector("#player-choice-img");
-    playerChoiceImg.src = `../images/${humanChoice}.png`;
+    playerChoiceImg.src = `./images/${humanChoice}.png`;
     playerChoiceImg.alt = `Player's choice: ${humanChoice}`;
     playerChoiceImg.classList.remove("hidden");
 
     // Update computer choice image dynamically
     let computerChoiceImg = document.querySelector("#computer-choice-img");
-    computerChoiceImg.src = `../images/${computerChoice}.png`;
+    computerChoiceImg.src = `./images/${computerChoice}.png`;
     computerChoiceImg.alt = `Computer's choice: ${computerChoice}`;
     computerChoiceImg.classList.remove("hidden");
 
